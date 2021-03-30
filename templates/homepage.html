@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+HOMEPAGE
+{% endblock title %}
+
+
+{% block content %}
+<div class="jumbotron"> 
+    <center><h1>Lets To-Do List a Make</h1> </center>
+    <center><p class="lead">Değiştirilemeyen bir düzen, kötü bir düzendir l Publilius Cyrus </p> </center>
+
+    <hr class="my-60"> 
+      
+    <center><a class="btn btn-outline-success"  href="{% url 'create'%}":>Create a To-Do List</a></center>
+</div> 
+
+
+
+<div class="container">
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">To-Do List</th>
+        <th scope="col">Is Finished?</th>
+        <th scope="col">Date and Time</th>
+        <th scope="col">Delete</th>
+        <th scope="col">Update</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for todo in todo_list %}
+      <tr>
+        <th>{{ todo.title}}</th>
+        <td>{{ todo.description}}</td>
+        <td>{{ todo.finished}}</td>
+        <td>{{ todo.date}}</td>
+        <td></td>
+      </tr>
+      {% endfor %}
+     
+    </tbody>
+  </table>
+</div>
+
+
+   
+
+
+{% endblock content %}

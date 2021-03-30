@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+ Create
+ {% endblock title %}
+
+
+ {% block content %}
+CREATE PAGE
+
+
+<div class="jumbotron"> 
+    <center><h1>Lets To-Do List a Make</h1> </center>
+    <center><p class="lead">Değiştirilemeyen bir düzen, kötü bir düzendir l Publilius Cyrus </p> </center>
+    <div>
+        <form method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+            <div class="w-50">
+          <label for="exampleInputEmail1" class="form-label">To-do Title</label>
+          <input type="text" class="form-control"  name="title">
+         </div>
+          <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Discription</label>
+          <div class="w-50">
+          <input type="Discription" class="form-control" name="Discription" >
+        </div>
+    </div>
+    <div class="col-sm-10"><label for="exampleInputEmail1" >Is finished?</label>
+        <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" >
+            <label class="form-check-label" for="exampleCheck1">Yes</label>
+        </div>
+    </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form></div>
+</div>
+
+
+{% endblock content %}
